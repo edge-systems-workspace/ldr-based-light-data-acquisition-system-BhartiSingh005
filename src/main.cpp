@@ -37,6 +37,12 @@ void loop() {
     // Read analog value from LDR
     ldrValue = analogRead(LDR_PIN);
 
+    // Convert ADC value (0-1023) to percentage
+    int lightPercent = map(ldrValue, 0, 1023, 0, 100);
+    Serial.print("Light Intensity: ");
+    Serial.print(lightPercent);
+    Serial.println(" %");
+
     // TODO 6:
     // Print raw ADC value
     Serial.print("Raw ADC Value: ");
